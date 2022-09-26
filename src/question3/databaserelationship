@@ -1,0 +1,50 @@
+there are three types of relation in database
+One to One relationship
+One to many or many to one relationship
+Many to many relationships
+
+1.
+one-to-one:-It is used to create a relationship between
+ two tables in which a single row of the first
+  table can only be related to one and only one 
+  records of a second table. Similarly, the 
+  row of a second table can also be related to 
+anyone row of the first table.
+
+ eg1
+ wife1   -> <-    h1
+ wife2   -> <-    h2
+ eg1
+     student1 -> <-   roll1
+     student2   -> <-      roll2
+       
+ 
+ 2.
+ one-to-many->It is used to create a relationship between
+ two tables in which a single row of the first
+  table can  be related to many row of second table 
+  eg-
+  father1 ->c1
+          ->c2
+          ->c3
+          
+    eg2 
+    course1-> s1
+            ->s1
+            ->3
+            
+ many to many->It is used to create a relationship between
+ two tables in which a many row of the first
+  table can  be related to many  row of second table
+  
+  eg-
+  student1 <-  course1
+  student2 <-
+  student3 <- 
+  
+  and 
+  student1 ->course1
+           ->course2
+           ->course3 
+  and 
+         

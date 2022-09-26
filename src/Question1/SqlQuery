@@ -1,0 +1,60 @@
+
+
+Q1.
+
+create table student
+(
+roll int primary key,
+name varchar(12) not null,
+address varchar(12) not null,
+mobile varchar(10) not null
+
+);
+
+create table course
+(
+cid int primary key,
+cname  varchar(12) not null,
+fee int not null,
+duration varchar(12) not null
+);
+
+Multiple stdudent->multiple course;
+multiple cource ->multiple student;
+
+create table student_course
+(
+roll int,
+cid int
+);
+
+insert into student_course values
+(2,1),
+(2,2);
+
+insert into student_course values
+(1,1),
+(1,4);
+
+insert into student_course values
+(3,2),
+(3,5);
+
+
+insert into student_course values
+(5,1),
+(5,3),
+(5,4);
+
+insert into student_course values
+(4,4);
+
+ select *from student where student roll 
+in(select roll from student_course
+ where cid=(select cid from student_course where  cname='java'));
+
+select *from student where roll in
+(select roll from student_course where
+cid=(select cid from course where cname='java')
+)
+

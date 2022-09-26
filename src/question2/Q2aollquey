@@ -1,0 +1,67 @@
+
+
+Q2.
+
+create table Department
+(
+  did int primary key,
+  dname varchar(12) not null,
+ location varchar(12) not null
+
+);
+
+create table Employee
+(
+empId int primary key,
+ename varchar(12) not null,
+address varchar(12) not null,
+mobile varchar(12) not null,
+salary int not null,
+deptId int
+
+);
+
+here one departmet cand have many employee so department to employee
+is one to many relationship
+d1->e1
+  ->e2
+  ->e3
+
+insert into department values
+(1,'Account','patna'),
+(2,'sales','hydrabad'),
+(3,'marketing','banras'),
+(4,'Hr','lakhnow');
+
+insert into employee values
+(23,'maehs','patna','786786778',100000,1),
+(24,'ramlal','ilahabad','786786778',90000,1),
+
+
+insert into employee values
+(20,'n1','A1','7787867',3000,2),
+(21,'n2','A2','77778978',6000,2),
+(122,'n3','A3','766787878',9000,2);
+
+insert into employee values
+(25,'n6','A7','7787867',3000,3),
+(26,'n7','A8','77778978',6000,3);
+
+insert into employee values
+(27,'n10','A10','7787867',6000,4),
+(28,'n11','A11','77778978',6000,4);
+
+*
+ select sum(salary) from employee group by deptid;
+
+*
+select *from employee where deptid=(select did from department where dname='sales' );
+
+*
+select *from department where did=(select deptid from employee where empid=12);
+
+*
+select ename,max(salary) from employee 
+where salary<(select max(salary) from employee);
+
+
